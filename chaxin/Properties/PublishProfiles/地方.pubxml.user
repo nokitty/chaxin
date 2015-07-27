@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Administrator\Desktop\网站</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="area.txt">
+      <publishTime>07/25/2015 13:50:17</publishTime>
+    </File>
+    <File Include="bin/chaxin.dll">
+      <publishTime>07/25/2015 15:08:24</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>07/15/2015 16:12:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/10/2015 10:45:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>07/10/2015 10:45:16</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>07/10/2015 11:41:08</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/15/2015 16:03:13</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/09/2013 11:04:48</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/10/2015 10:45:16</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>07/09/2013 11:04:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/10/2015 10:45:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/10/2015 10:45:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/10/2015 10:45:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/10/2015 10:45:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/10/2015 10:45:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/10/2015 10:45:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/10/2015 10:45:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/10/2015 10:45:16</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>07/10/2015 10:45:20</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.resources.dll">
+      <publishTime>07/09/2013 11:34:42</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.WebRequest.resources.dll">
+      <publishTime>07/09/2013 11:34:40</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>07/10/2015 10:45:18</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>07/10/2015 10:45:20</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>07/10/2015 10:45:20</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>07/10/2015 10:45:18</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>07/10/2015 10:45:18</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>07/10/2015 10:45:18</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>07/10/2015 10:45:18</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>07/10/2015 10:45:18</publishTime>
+    </File>
+    <File Include="Controllers/AboutController.cs">
+      <publishTime>07/13/2015 14:17:46</publishTime>
+    </File>
+    <File Include="Controllers/AdminController.cs">
+      <publishTime>07/24/2015 16:09:23</publishTime>
+    </File>
+    <File Include="Controllers/HomeController.cs">
+      <publishTime>07/10/2015 10:50:20</publishTime>
+    </File>
+    <File Include="Controllers/QueryController.cs">
+      <publishTime>07/22/2015 14:15:01</publishTime>
+    </File>
+    <File Include="Controllers/ReportController.cs">
+      <publishTime>07/22/2015 14:15:01</publishTime>
+    </File>
+    <File Include="Controllers/UpdateController.cs">
+      <publishTime>07/25/2015 16:39:05</publishTime>
+    </File>
+    <File Include="css/bootstrap-theme.css">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="css/bootstrap-theme.css.map">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="css/bootstrap-theme.min.css">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="css/bootstrap.css.map">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="css/intro_min.css">
+      <publishTime>07/13/2015 17:00:24</publishTime>
+    </File>
+    <File Include="css/lawMobile.css">
+      <publishTime>07/20/2015 09:35:23</publishTime>
+    </File>
+    <File Include="css/mobiscroll.animation-2.5.2.css">
+      <publishTime>07/13/2015 13:53:30</publishTime>
+    </File>
+    <File Include="css/mobiscroll.core-2.5.2.css">
+      <publishTime>07/13/2015 13:53:30</publishTime>
+    </File>
+    <File Include="css/WdatePicker.css">
+      <publishTime>07/13/2015 13:53:30</publishTime>
+    </File>
+    <File Include="css/zyUpload.css">
+      <publishTime>07/13/2015 13:53:30</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>07/22/2015 11:01:09</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/10/2015 10:44:58</publishTime>
+    </File>
+    <File Include="images/20150410045530382_easyicon_net_16.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/2_t.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/3_t.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/4_t.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/addImg.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/arrow.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/back.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/checkBox.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/cityIco.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/close.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/css-arrow.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/ex-ico1.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/ex-ico2.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/ex-ico3.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/fpbj.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/fpbj_1.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/guofenchaxun.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/home.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/i.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/ico-check.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/ico-close.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/ih2.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/ih3.png">
+      <publishTime>07/14/2015 08:54:28</publishTime>
+    </File>
+    <File Include="images/item5_d.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/item5_p.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/load-bg.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/load.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/logo_1.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/mask-bg.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/next.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/person.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/provinceIco.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/pull-icon%402x.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/smile.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/step-tips.png">
+      <publishTime>07/13/2015 13:53:59</publishTime>
+    </File>
+    <File Include="images/textbox.png">
+      <publishTime>07/13/2015 13:54:00</publishTime>
+    </File>
+    <File Include="images/tqbox - 副本.png">
+      <publishTime>07/13/2015 13:54:00</publishTime>
+    </File>
+    <File Include="images/tqbox.png">
+      <publishTime>07/13/2015 16:58:34</publishTime>
+    </File>
+    <File Include="images/tt1.png">
+      <publishTime>07/13/2015 13:54:00</publishTime>
+    </File>
+    <File Include="images/tt2.png">
+      <publishTime>07/13/2015 13:54:00</publishTime>
+    </File>
+    <File Include="images/wx_ico2.png">
+      <publishTime>07/13/2015 13:54:00</publishTime>
+    </File>
+    <File Include="images/zp.png">
+      <publishTime>07/13/2015 13:54:00</publishTime>
+    </File>
+    <File Include="images/zp2.png">
+      <publishTime>07/13/2015 13:54:00</publishTime>
+    </File>
+    <File Include="js/bootstrap.js">
+      <publishTime>07/22/2015 11:01:11</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>07/22/2015 11:01:11</publishTime>
+    </File>
+    <File Include="js/checkIdCard.js">
+      <publishTime>07/24/2015 15:27:03</publishTime>
+    </File>
+    <File Include="js/common.js">
+      <publishTime>07/24/2015 16:41:08</publishTime>
+    </File>
+    <File Include="js/exposure.js">
+      <publishTime>07/24/2015 16:32:41</publishTime>
+    </File>
+    <File Include="js/exposureForm.js">
+      <publishTime>07/14/2015 10:32:59</publishTime>
+    </File>
+    <File Include="js/jquery-1.10.2.min.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/jquery.cookie.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/law.js">
+      <publishTime>07/16/2015 16:29:59</publishTime>
+    </File>
+    <File Include="js/lib.min.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/mobiscroll.core-2.5.2-zh.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/mobiscroll.core-2.5.2.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/mobiscroll.datetime-2.5.1-zh.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/mobiscroll.datetime-2.5.1.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/npm.js">
+      <publishTime>07/22/2015 11:01:11</publishTime>
+    </File>
+    <File Include="js/ping.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/talk.area.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/touch.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/upLoadImg.js">
+      <publishTime>07/13/2015 17:11:17</publishTime>
+    </File>
+    <File Include="js/zepto.js">
+      <publishTime>07/13/2015 13:53:04</publishTime>
+    </File>
+    <File Include="js/zyFile.js">
+      <publishTime>07/14/2015 11:01:31</publishTime>
+    </File>
+    <File Include="js/zyUpload.js">
+      <publishTime>07/13/2015 16:38:18</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/17/2015 10:50:07</publishTime>
+    </File>
+    <File Include="Views/About/Index.aspx">
+      <publishTime>07/13/2015 14:19:25</publishTime>
+    </File>
+    <File Include="Views/Admin/Check.aspx">
+      <publishTime>07/22/2015 17:01:33</publishTime>
+    </File>
+    <File Include="Views/Admin/Index.aspx">
+      <publishTime>07/22/2015 17:09:33</publishTime>
+    </File>
+    <File Include="Views/Admin/Login.aspx">
+      <publishTime>07/23/2015 11:24:51</publishTime>
+    </File>
+    <File Include="Views/Admin/ReportDetail.aspx">
+      <publishTime>07/22/2015 17:11:05</publishTime>
+    </File>
+    <File Include="Views/Home/Index.aspx">
+      <publishTime>07/16/2015 16:20:35</publishTime>
+    </File>
+    <File Include="Views/Query/Index.aspx">
+      <publishTime>07/16/2015 17:20:51</publishTime>
+    </File>
+    <File Include="Views/Query/PersonDetail.aspx">
+      <publishTime>07/17/2015 16:41:14</publishTime>
+    </File>
+    <File Include="Views/Report/Detail.aspx">
+      <publishTime>07/14/2015 15:06:07</publishTime>
+    </File>
+    <File Include="Views/Report/Index.aspx">
+      <publishTime>07/17/2015 17:26:44</publishTime>
+    </File>
+    <File Include="Views/Report/List.aspx">
+      <publishTime>07/15/2015 18:08:56</publishTime>
+    </File>
+    <File Include="Views/Share/BootstrapFrame.Master">
+      <publishTime>07/22/2015 17:00:59</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/10/2015 10:44:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/25/2015 15:08:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
