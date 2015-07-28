@@ -72,7 +72,6 @@ namespace chaxin.Controllers
         {
             try
             {
-
                 string name = Tools.GetStringFromRequest(Request.QueryString["name"]);
                 string cardnum = Request.QueryString["cardnum"];
                 if (string.IsNullOrWhiteSpace(cardnum))
@@ -86,23 +85,21 @@ namespace chaxin.Controllers
                 foreach (var item in res)
                 {
                     dynamic d = new ExpandoObject();
-                    var p = new DBC.Person(Convert.ToInt32(item[0]));
                     //基本信息
-                    d.id = p.ID;
-                    d.name = p.Name;
-                    d.cardnum = p.CardNum;
+                    var p = new DBC.Person(Convert.ToInt32(item[0]));
+                    d.person = p;
 
                     //法院公布次数
-                    var res1 = DB.SExecuteScalar("select count(*) from public_person where personid=?", p.ID);
-                    d.publicCount = res1;
+                    var res1 = DB.SExecuteScalar("select count(*) from public_person where personid=?", p.ID);                    
 
                     //用户举报次数
-                    var res2 = DB.SExecuteScalar("select count(*) from upload_person where personid=?", p.ID);
-                    d.reportCount = res2;
+                    var res2 = DB.SExecuteScalar("select count(*) from upload_person where personid=?", p.ID);                   
 
                     //p2p不良记录
                     var res3 = DB.SExecuteScalar("select count(*) from p2p_person where personid=?", p.ID);
-                    d.p2pCount = res3;
+
+                    //举报总次数
+                    d.count = Convert.ToInt32(res1) + Convert.ToInt32(res2) + Convert.ToInt32(res3);
 
                     list.Add(d);
                 }
@@ -117,7 +114,7 @@ namespace chaxin.Controllers
             }
         }
 
-        public ActionResult PersonDetail(int id)
+        public ActionResult Person(int id)
         {
             try
             {
@@ -154,6 +151,60 @@ namespace chaxin.Controllers
                 ViewBag.ppList = ppList;
                 ViewBag.upList = upList;
                 ViewBag.p2pList = p2pList;
+                return View();
+            }
+            catch
+            {
+                return HttpNotFound();
+            }
+        }
+
+        public ActionResult Public(int id)
+        {
+            try
+            {
+                var pp =new DBC.PublicPerson(id);
+                var p = new DBC.Person(pp.PersonId);
+
+                ViewBag.pp = pp;
+                ViewBag.p = p;
+
+                return View();
+            }
+            catch
+            {
+                return HttpNotFound();
+            }
+        }
+
+        public ActionResult P2P(int id)
+        {
+            try
+            {
+                var p2p = new DBC.P2PPerson(id);
+                var p = new DBC.Person(p2p.PersonId);
+
+                ViewBag.p2p = p2p;
+                ViewBag.p = p;
+
+                return View();
+            }
+            catch
+            {
+                return HttpNotFound();
+            }
+        }
+
+        public ActionResult Report(int id)
+        {
+            try
+            {
+                var rp = new DBC.ReportedPerson(id);
+                var p = new DBC.Person(rp.PersonId);
+
+                ViewBag.rp = rp;
+                ViewBag.p = p;
+
                 return View();
             }
             catch

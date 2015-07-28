@@ -11,6 +11,8 @@ namespace DBC
         public int ID { get; set; }
         public string Name { get; set; }
         public string CardNum { get; set; }
+        public string Province { get; set; }
+        public string City { get; set; }
 
         public Person(int id)
         {
@@ -24,7 +26,7 @@ namespace DBC
 
         void Initialize(string filter, params object[] args)
         {
-            var sql = "select id,name ,cardnum from " + _tableName + " where " + filter;
+            var sql = "select id,name ,cardnum,province,city from " + _tableName + " where " + filter;
             var res = DB.SExecuteReader(sql, args);
 
             if (res.Count == 0)
@@ -34,6 +36,8 @@ namespace DBC
             ID = Convert.ToInt32(row[0]);
             Name = (string)row[1];
             CardNum = (string)row[2];
+            Province = (string)row[3];
+            City = (string)row[4];
         }
 
         static public Person Create(string name,string cardnum)

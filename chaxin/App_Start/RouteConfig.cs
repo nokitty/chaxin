@@ -14,9 +14,9 @@ namespace chaxin
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name:"PersonDetail",
+                name:"Person",
                 url:"query/person/{id}",
-                defaults: new { controller="Query",action="PersonDetail"}
+                defaults: new { controller="Query",action="Person"}
                 );
 
             routes.MapRoute(

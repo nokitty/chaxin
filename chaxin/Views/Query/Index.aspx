@@ -19,9 +19,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
     <link rel="stylesheet" href="css/lawMobile.css">
-
-    <script type="text/javascript">basePath = "http://www.kuaicha.info:80/"</script>
-
 </head>
 
 <body>
@@ -56,39 +53,35 @@
             <%}
               else
               {
+            %>
+            <ul class="result_wrap">
+                <%
                   for (int i = 0, n = ViewBag.result.Count; i < n; i++)
                   {
                       var item = ViewBag.result[i];
-            %>
-            <table border="0">
-                <tr>
-                    <th scope="col" class="xuhao">序号<%=i+1 %></th>
-                    <th scope="col" class="result_details"><a href="/query/person/<%=item.id %>">查看详情</a></th>
-                </tr>
-                <tr>
-                    <td>姓名</td>
-                    <td><%=item.name %></td>
-                </tr>
-                <tr>
-                    <td>身份证号</td>
-                    <td><%=item.cardnum %></td>
-                </tr>
-                <tr>
-                    <td>法院公布次数</td>
-                    <td><%=item.publicCount %></td>
-                </tr>
-                <tr class="result_last">
-                    <td>用户举报次数</td>
-                    <td><%=item.reportCount %></td>
-                </tr>
-                <tr class="result_last">
-                    <td>P2P借贷黑名单次数</td>
-                    <td><%=item.p2pCount %></td>
-                </tr>
-            </table>
-            <div style="border-bottom: 1px solid #e2e2e2; margin: 0 1%;"></div>
-            <%
+                %>
+                <li class="list-items">
+                    <span class="lawIndex"><%=i+1 %></span>
+                    <div class="law-list-items">
+                        <p class="law-result-title">
+                            <span class="law-list-name"><%=item.person.Name %></span>
+                            <span class="fr"><%=item.person.CardNum %></span>
+                        </p>
+                        <p class="law-list-record">
+                            <span class="law-list-address"><%=item.person.Province+item.person.City %></span>
+                            失信记录：
+                            <span class="record-num"><%=item.count %></span>
+                            条
+                        </p>
+                    </div>
+                    <span class="ico-arrow"></span>
+                    <a class="btn-law-detail-href" href="/query/person/<%=item.person.ID %>"></a>
+                </li>
+                <%
                   }
+                %>
+            </ul>
+            <%
               } %>
         </div>
 

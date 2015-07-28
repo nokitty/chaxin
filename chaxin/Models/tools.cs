@@ -41,3 +41,12 @@ public static class Tools
         }
     }
 }
+
+public static class DateTimeExtend
+{
+    public static string ToChsString(this DateTime date)
+    {
+        return date.ToString("yyyy年MM月dd日");
+    }
+
+}

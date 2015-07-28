@@ -628,7 +628,7 @@ input::-o-input-placeholder, textarea::-o-input-placeholder{
 
 }
 
-.bottom-nav-wrap,.bottom-menu-wrap{
+.bottom-nav-wrap,.menu{
 
 	position:fixed;
 
@@ -740,7 +740,7 @@ input::-o-input-placeholder, textarea::-o-input-placeholder{
 
    padding-right:26px;	
 
-   padding-bottom:10px;																												px;
+   padding-bottom:10px;		
 
    padding-top:12px;
 
@@ -802,7 +802,7 @@ input::-o-input-placeholder, textarea::-o-input-placeholder{
 
 }
 
-。bottom-menu-wrap{
+.bottom-menu-wrap{
 
 	height:60px;
 
@@ -820,7 +820,7 @@ input::-o-input-placeholder, textarea::-o-input-placeholder{
 
 }
 
-.menu-items{
+.bottom-menu li{
 
 	width:25%;
 
@@ -890,7 +890,7 @@ input::-o-input-placeholder, textarea::-o-input-placeholder{
 
 }
 
-.menu-text{
+.menu-text1,.menu-text2,.menu-text3,.menu-text4{
 
 	padding-left:6px;
 
@@ -902,21 +902,21 @@ input::-o-input-placeholder, textarea::-o-input-placeholder{
 
 }
 
-.bottom-menu .menu-items-cur-total .menu-ico1{background-position:-24px 0;}
+.bottom-menu .menu-items-cur .menu-ico1{background-position:-24px 0;}
 
-.bottom-menu .menu-items-cur-total .menu-text{ color:#e71510;}
+.bottom-menu .menu-items-cur .menu-text1{ color:#e71510;}
 
-.bottom-menu .menu-items-cur-law .menu-ico2{background-position:-24px 0;}
+.bottom-menu .menu-items-cur .menu-ico2{background-position:-24px 0;}
 
-.bottom-menu .menu-items-cur-law .menu-text{ color:#3581c8;}
+.bottom-menu .menu-items-cur .menu-text2{ color:#3581c8;}
 
-.bottom-menu .menu-items-cur-company .menu-ico3{background-position:-24px 0;}
+.bottom-menu .menu-items-cur .menu-ico3{background-position:-24px 0;}
 
-.bottom-menu .menu-items-cur-company .menu-text{ color:#f47119;}
+.bottom-menu .menu-items-cur .menu-text3{ color:#f47119;}
 
-.bottom-menu .menu-items-cur-personal .menu-ico4{background-position:-24px 0;}
+.bottom-menu .menu-items-cur .menu-ico4{background-position:-24px 0;}
 
-.bottom-menu .menu-items-cur-personal .menu-text{ color:#018f7a;}
+.bottom-menu .menu-items-cur .menu-text4{ color:#018f7a;}
 
 .report-header{
 
@@ -1976,6 +1976,19 @@ input::-o-input-placeholder, textarea::-o-input-placeholder{
 
 }
 
+.lawIndex {
+position: absolute;
+display: block;
+width: 40px;
+height: 20px;
+left: 0;
+top: 12px;
+line-height: 20px;
+text-align: center;
+color: #a4a4a4;
+font-size: 16px;
+}
+
 .law-list-items{	
 
 	min-height: 50px;
@@ -3005,6 +3018,7 @@ width:98%;
 margin:0 1%;
 }
 .result table th {
+	
 font-size:16px;
 height:1.52rem;
 line-height:1.52rem;
@@ -3012,6 +3026,7 @@ background-color: #fffded;
 border-bottom: 1px solid #e2e2e2;
 }
 .result table td {
+	
 padding-left:3%;
 font-size:16px;
 height:1.52rem;
@@ -3025,31 +3040,34 @@ border-top: 1px solid #e2e2e2;
 .result_details table {
 border-collapse: collapse;
 border-spacing: 0;
-border:1px solid #e2e2e2;
+/*border:1px solid #e2e2e2;*/
 width:98%;
 margin:0 1%;
 }
-.result_details table th {
-text-align:left;
-padding-left:3%;
-font-size:16px;
-height:1.52rem;
-line-height:1.52rem;
-background-color: #fffded;
-border-bottom: 1px solid #e2e2e2;
-}
-.result_details table td {
-padding-left:3%;
-font-size:16px;
-height:1.52rem;
-line-height:1.52rem;
+
+.result_details table td.mthead {
+font-size: 14px;
+color: #000;
+text-align: center;
+border-top: 1px solid #e7e7e7;
+border-bottom: 1px solid #e7e7e7;
+ }
+ .result_details table td {
+	
+	color:#595757;
+padding:8px 10px;
+font-size:13px;
+height:20px;
+line-height:20px;
 background-color: #fff;
-border:1px solid #e2e2e2;
+border-bottom:1px solid #e2e2e2;
 }
-.biaoti_right{ width:40%; word-wrap:break-word; 
+
+
+.biaoti_right{ width:50%; text-align:right; padding-right:3%;padding-left:0px;pord-wrap:break-word; 
 word-break:break-all; 
-overflow: hidden;}
-.biaoti_left{ width:60%;word-wrap:break-word; 
+overflow: hidden; border-right:1px solid #e2e2e2;}
+.biaoti_left{ width:50%;word-wrap:break-word; 
 word-break:break-all; 
 overflow: hidden;}
 .result_details table  td p{ 
@@ -3058,4 +3076,4 @@ word-break:break-all;
 overflow: hidden;/*这个参数根据需要来绝对要不要*/ }
 
 .result_details_tittle{ margin-bottom:15px; padding-left:1%;}
-.result_details_tittle p{ color:#AF072B; line-height:30px;}
+.result_details_tittle p{ font-size:15px;color:#AF072B; line-height:30px;}
