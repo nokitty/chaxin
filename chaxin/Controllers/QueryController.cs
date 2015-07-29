@@ -13,68 +13,13 @@ namespace chaxin.Controllers
 {
     public class QueryController : Controller
     {
-        void Pick(string name,string cardNum)
-        {
-            var url = "http://shixin.court.gov.cn/search";
-            var currentPage = 1;
-            while (true)
-            {
-                var wc = new WebClient();
-                var values = new System.Collections.Specialized.NameValueCollection();
-                values.Add("currentPage", currentPage.ToString());
-                values.Add("pName", name);
-                values.Add("pProvince", "0");
-                values.Add("pCardNum", cardNum);
-
-                var buffer = wc.UploadValues(url, values);
-                var htmlStr = UTF8Encoding.UTF8.GetString(buffer);
-
-                var doc = new HtmlDocument();
-                doc.LoadHtml(htmlStr);
-
-                var collection = doc.DocumentNode.SelectNodes("//td[@align='center']/a[@class='View']");
-                // var collection = doc.DocumentNode.SelectNodes("//tr[@style='height: 28px;']");
-                if (collection == null)
-                    break;
-
-                foreach (var item in collection)
-                {
-                    var nameNode = item.SelectSingleNode("../../td[2]/a");
-                    if (nameNode.InnerText.Trim() != name)
-                        continue;
-
-                    var id = item.Attributes["id"].Value;
-                    if (DB.SExecuteScalar("select id from public_person where id=? ", id) != null)
-                    {
-                        continue;
-                    }
-                    var buffer1 = wc.DownloadData("http://shixin.court.gov.cn/detail?id=" + id);
-                    var jsonStr = UTF8Encoding.UTF8.GetString(buffer1);
-
-                    var json = JObject.Parse(jsonStr);
-
-                    var iname = (string)json["iname"];
-                    var cardnum = (string)json["cardNum"];
-                    var personid = Convert.ToInt32(DB.SExecuteScalar("select id from person where name=? and cardnum=?", iname, cardnum));
-                    if (personid == 0)
-                        personid = DB.SInsert("insert into person (name,cardnum) values (?,?)", iname, cardnum);
-
-
-                    DB.SExecuteNonQuery("insert ignore into public_person (id,casecode,age,sexy,courtname,areaname,gistid,regdate,gistunit,duty,performance,disrupttypename,publishdate,personid) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                       (string)json["id"], (string)json["caseCode"], Convert.ToInt32(json["age"]), (string)json["sexy"], (string)json["courtName"], (string)json["areaName"], (string)json["gistId"], Convert.ToDateTime((string)json["regDate"]), (string)json["gistUnit"], (string)json["duty"], (string)json["performance"], (string)json["disruptTypeName"], Convert.ToDateTime((string)json["publishDate"]), personid);
-                }
-
-                currentPage++;
-            }
-        }
-
         public ActionResult Index()
         {
             try
             {
-                string name = Tools.GetStringFromRequest(Request.QueryString["name"]);
+                string name = Tools.GetStringFromRequest(Request.QueryString["name"],"请先输入查询的姓名");
                 string cardnum = Request.QueryString["cardnum"];
-                if (string.IsNullOrWhiteSpace(cardnum))
+                if (cardnum==null || System.Text.RegularExpressions.Regex.IsMatch(cardnum,@"\d{6}")==false)
                     cardnum = "";
                 
                 //Pick(name,cardnum);

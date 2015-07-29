@@ -60,7 +60,7 @@
                         </li>
                         <li id="idcardWrap" class="input-items">
                             <label class="form-label">身份证</label>
-                            <input id="cardnum" class="form-input" type="text" placeholder="请输入身份证号码" data-valida-input="true">
+                            <input id="cardnum" class="form-input" type="text" placeholder="请输入身份证号码前6位" data-valida-input="true">
                             <label class="form-label2">选填</label>
                         </li>
 

@@ -64,7 +64,7 @@ namespace DBC
         public static ReportedPerson Create(string name, string sexy, string cardnum, string province, string city, string tel, int arrears, int count, DateTime loandate, DateTime repaydate, string remark, string pics)
         {
             var p = DBC.Person.Create(name, cardnum);
-            var id = DB.SInsert("insert into " + _tableName + " (sexy,province,city,tel,arrears,count,loandate,repaydate,remark,pics,personid) values (?,?,?,?,?,?,?,?,?,?,?)",  sexy, province, city, tel, arrears, count, loandate, repaydate, remark, pics,p.ID);
+            var id = DB.SInsert("insert into " + _tableName + " (sexy,province,city,tel,arrears,count,loandate,repaydate,remark,pics,personid,reportdate) values (?,?,?,?,?,?,?,?,?,?,?,?)",  sexy, province, city, tel, arrears, count, loandate, repaydate, remark, pics,p.ID,DateTime.Now);
 
             return new ReportedPerson(id);
         }

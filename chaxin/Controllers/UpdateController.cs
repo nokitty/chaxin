@@ -31,28 +31,28 @@ namespace chaxin.Controllers
             //}
            //var b=  Request.ServerVariables[""];
            //var ip= Request.UserHostAddress;
-            using (DB db = new DB())
-            {
-                var command = db.CommandPrepare("select cardnum,id from person");
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var num = reader.GetString(0);
-                        if (num.Length != 18)
-                            continue;
+            //using (DB db = new DB())
+            //{
+            //    var command = db.CommandPrepare("select cardnum,id from person");
+            //    using (var reader = command.ExecuteReader())
+            //    {
+            //        while (reader.Read())
+            //        {
+            //            var num = reader.GetString(0);
+            //            if (num.Length != 18)
+            //                continue;
 
-                        var areaCode = num.Substring(0, 6);
-                        var address = cc(areaCode);
+            //            var areaCode = num.Substring(0, 6);
+            //            var address = cc(areaCode);
 
-                        if (address.City != "" && address.Province != "")
-                        {
-                            var id = reader.GetInt32(1);
-                            DB.SExecuteNonQuery("update person set province=?,city=? where id=?", address.Province, address.City, id);
-                        }
-                    }
-                }
-            }
+            //            if (address.City != "" && address.Province != "")
+            //            {
+            //                var id = reader.GetInt32(1);
+            //                DB.SExecuteNonQuery("update person set province=?,city=? where id=?", address.Province, address.City, id);
+            //            }
+            //        }
+            //    }
+            //}
 
             //var ip = "113.71.252.247";
             //var wc = new WebClient();
@@ -64,7 +64,8 @@ namespace chaxin.Controllers
 
             //return Content("ip是:" + ip + ",来自" + json["retData"]["province"] + " " + json["retData"]["city"]);
 
-            return Content("OK");
+            //return Content("OK");
+            return HttpNotFound();
         }
 
         Address cc(string str)

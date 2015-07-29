@@ -19,9 +19,16 @@ namespace DBC
             Initialize("id=?", id);
         }
 
-        public Person(string name,string cardnum)
-        {            
-            Initialize("name=? and cardnum=?", name.Trim(), cardnum.Trim());
+        public Person(string name, string cardnum)
+        {
+            cardnum = cardnum.Trim();
+            name = name.Trim();
+            if (cardnum.Contains("****") == false)
+            {
+                cardnum = CardNumDeal(cardnum);
+            }
+
+            Initialize("name=? and cardnum=?", name, cardnum);
         }
 
         void Initialize(string filter, params object[] args)
@@ -40,7 +47,7 @@ namespace DBC
             City = (string)row[4];
         }
 
-        static public Person Create(string name,string cardnum)
+        static public Person Create(string name, string cardnum)
         {
             name = name.Trim();
             cardnum = cardnum.Trim();
@@ -52,13 +59,24 @@ namespace DBC
             {
                 string province;
                 string city;
-                GetPosition(cardnum,out province,out city);
-                var id = DB.SInsert("insert into " + _tableName + " (name,cardnum,province,city) values (?,?,?,?)", name, cardnum,province,city);
+                GetPosition(cardnum, out province, out city);
+
+                var id = DB.SInsert("insert into " + _tableName + " (name,cardnum,province,city) values (?,?,?,?)", name, CardNumDeal(cardnum), province, city);
                 return new Person(id);
             }
         }
 
-        static public void GetPosition(string num, out string province ,out string city)
+        static string CardNumDeal(string cardnum)
+        {
+            if (cardnum.Length == 18)
+                cardnum = cardnum.Substring(0, 10) + "****" + cardnum.Substring(14, 4);
+            else if (cardnum.Length == 15)
+                cardnum = cardnum.Substring(0, 8) + "****" + cardnum.Substring(12, 3);
+
+            return cardnum;
+        }
+
+        static public void GetPosition(string num, out string province, out string city)
         {
             province = "";
             city = "";
@@ -68,13 +86,13 @@ namespace DBC
 
             var str = num.Substring(0, 6);
 
-            var sql = "select name from "+DBTables.Area+" where province=? and city=? and area=?";
+            var sql = "select name from " + DBTables.Area + " where province=? and city=? and area=?";
 
-            var res1 = DB.SExecuteScalar(sql, str.Substring(0, 2),"00","00");
+            var res1 = DB.SExecuteScalar(sql, str.Substring(0, 2), "00", "00");
             if (res1 != null)
                 province = (string)res1;
 
-            var res2 = DB.SExecuteScalar(sql, str.Substring(0, 2), str.Substring(2, 2),"00");
+            var res2 = DB.SExecuteScalar(sql, str.Substring(0, 2), str.Substring(2, 2), "00");
             if (res2 != null)
             {
                 city = (string)res2;

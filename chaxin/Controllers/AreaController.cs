@@ -19,6 +19,8 @@ namespace chaxin.Controllers
             var city = Request.QueryString["city"];
             var p = 0;
 
+            
+
             try
             {
                 p = Convert.ToInt32(Request.QueryString["p"]);
