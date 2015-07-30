@@ -17,9 +17,7 @@ namespace chaxin.Controllers
         {
             var province = Request.QueryString["province"];
             var city = Request.QueryString["city"];
-            var p = 0;
-
-            
+            var p = 0;            
 
             try
             {

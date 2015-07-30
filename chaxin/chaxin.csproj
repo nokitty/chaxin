@@ -127,6 +127,9 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\BusinessController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IllegalController.cs" />
     <Compile Include="Controllers\QueryController.cs" />
@@ -242,6 +245,7 @@
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Admin\Login.aspx" />
     <Content Include="Views\Admin\ReportDetail.aspx" />
+    <Content Include="Views\Business\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Illegal\Index.aspx" />
     <Content Include="Views\Illegal\Result.aspx" />
